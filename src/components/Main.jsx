@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Main() {
 
-    const [ingredients, setIngredients] = useState([ "chicken", "beef", "pork"]);
+    const [ingredients, setIngredients] = useState([]);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -18,6 +18,8 @@ export default function Main() {
     const ingredientListItems = ingredients.map(ingredient => (
         <li key={ingredient}>{ingredient}</li>
     ))
+    
+
     return(
         <main>
             <form onSubmit={handleSubmit} className='add-ingredient-form'>
