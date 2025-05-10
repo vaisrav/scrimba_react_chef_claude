@@ -4,14 +4,16 @@ export default function Main() {
 
     const [ingredients, setIngredients] = useState([]);
 
-    function handleSubmit(e) {
-        e.preventDefault();
+    function addIngredient(formData) {
+        // e.preventDefault();
         
-        const newIngredient = e.target.ingredient.value.trim();
+        // const formData = new FormData(e.target);
+        const newIngredient = formData.get("ingredient").trim();
+        
         if (newIngredient) {
             console.log('Ingredient added!');
             setIngredients( prev => [...prev, newIngredient])
-            e.target.ingredient.value = "";
+            // e.target.ingredient.value = "";
         }
     }
 
@@ -22,7 +24,7 @@ export default function Main() {
 
     return(
         <main>
-            <form onSubmit={handleSubmit} className='add-ingredient-form'>
+            <form action={addIngredient} className='add-ingredient-form'>
                 <input 
                     aria-label="Add ingredient"
                     type="text"
