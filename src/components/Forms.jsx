@@ -6,8 +6,9 @@ function Forms() {
     const password = formData.get("password");
     const empStatus = formData.get("empStatus");
     const dietRes = formData.getAll("dietRes");
-    
-    console.log(email, password, empStatus, dietRes);
+    const favColor = formData.get("favColor");
+
+    console.log(email, password, empStatus, dietRes, favColor);
   }
 
   return (
@@ -36,9 +37,14 @@ function Forms() {
         <textarea id="desc" name="desc" defaultValue="basic desc"></textarea>
 
         <fieldset>
-            <legend>Employee Status</legend>
+          <legend>Employee Status</legend>
           <label>
-            <input type="radio" defaultChecked value="unemployed" name="empStatus" />
+            <input
+              type="radio"
+              defaultChecked
+              value="unemployed"
+              name="empStatus"
+            />
             unemployed
           </label>
           <label>
@@ -52,13 +58,23 @@ function Forms() {
         </fieldset>
 
         <fieldset>
-            <legend>Dietery Restrictions</legend>
+          <legend>Dietery Restrictions</legend>
           <label>
-            <input type="checkbox" defaultChecked value="vegetarian" name="dietRes" />
+            <input
+              type="checkbox"
+              defaultChecked
+              value="vegetarian"
+              name="dietRes"
+            />
             vegetarian
           </label>
           <label>
-            <input type="checkbox" defaultChecked value="gluten free" name="dietRes" />
+            <input
+              type="checkbox"
+              defaultChecked
+              value="gluten free"
+              name="dietRes"
+            />
             gluten free
           </label>
           <label>
@@ -67,6 +83,13 @@ function Forms() {
           </label>
         </fieldset>
 
+        <label htmlFor="favColor"> whats your fav color</label>
+        <select id="favColor" name="favColor">
+          <option disabled value="none">select a color</option>
+          <option value="red">red</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+        </select>
 
         <button type="submit">Submit</button>
       </form>
