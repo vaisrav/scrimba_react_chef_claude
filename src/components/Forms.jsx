@@ -5,12 +5,11 @@ function Forms() {
     const data = Object.fromEntries(formData);
     const dietData = formData.getAll("dietRes");
     const allData = {
-        ...data,
-        dietRes: dietData,
-    }
+      ...data,
+      dietRes: dietData,
+    };
 
     console.log(allData);
-    // console.log(allData);
   }
 
   return (
@@ -87,7 +86,9 @@ function Forms() {
 
         <label htmlFor="favColor"> whats your fav color</label>
         <select id="favColor" name="favColor">
-          <option disabled value="none">select a color</option>
+          <option disabled value="none">
+            select a color
+          </option>
           <option value="red">red</option>
           <option value="green">green</option>
           <option value="blue">blue</option>
