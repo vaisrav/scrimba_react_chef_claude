@@ -105,10 +105,37 @@ main {
   font-size: 0.875rem;
   font-weight: 500;
 }
+.add-ingredient-form > button:hover {
+  cursor: pointer;
+}
 
 .add-ingredient-form > button::before {
   content: '+';
   margin-right: 4px;
 }
 
+/* get recipe container styles */
+
+.get-recipe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.25rem 0;
+  padding: 0 1rem;
+  background-color: #eeece8;
+  border-radius: 10px;
+}
+
+.get-recipe-container > button {
+  font-family: Inter, sans-serif;
+  font-weight: 500;;
+  background-color: #d1694f;
+  border-radius: 5px;
+  border: 1px solid #d1694f;
+  padding: 0.5rem;
+  color: whitesmoke;
+}
+.get-recipe-container > button:hover {
+  cursor: pointer;
+}
 
