@@ -1,7 +1,8 @@
 import './App.css';
 // import Conditional from './components/Conditional';
-import Header from './components/Header';
-import Main from './components/Main';
+import Header from './components/chefClaudeComponents/Header';
+import Main from './components/chefClaudeComponents/Main';
+import PadsMain from './components/padsChallenge/PadsMain';
 // import Forms from './components/Forms';
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
       <Main />
       {/* <Forms /> */}
       {/* <Conditional /> */}
+
+      <PadsMain />
     </div>
   );
 }

@@ -139,3 +139,29 @@ main {
   cursor: pointer;
 }
 
+
+
+
+
+
+
+
+/* pads styles */
+
+.pad-container > button {
+  font-family: Inter, sans-serif;
+  background-color: gray;
+  color: #fafaf8;
+  border-radius: 6px;
+  border: 1px solid gray;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  margin: 1rem;
+  opacity: 0.1;
+}
+
+.pad-container > button.on {
+  opacity: 1;
+  border: 1px solid black;
+}
