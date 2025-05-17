@@ -1,4 +1,5 @@
 import { useState } from "react";
+import IngredientForm from "./IngredientForm";
 
 export default function Main() {
   const [ingredients, setIngredients] = useState([]);
@@ -26,15 +27,7 @@ export default function Main() {
 
   return (
     <main>
-      <form action={addIngredient} className="add-ingredient-form">
-        <input
-          aria-label="Add ingredient"
-          type="text"
-          placeholder="e.g. tomato"
-          name="ingredient"
-        />
-        <button>Add Ingredient</button>
-      </form>
+      <IngredientForm action={addIngredient} />
       {ingredientListItems.length > 0 && (
         <section>
           <h2>Ingredients on hand:</h2>
