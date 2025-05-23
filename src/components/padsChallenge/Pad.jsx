@@ -1,15 +1,15 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 function Pad(props) {
 
-    const [on, setOn] = useState(props.on); 
+    // const [on, setOn] = useState(props.on); 
 
     return (
         <button 
-        onClick={props.click} 
-        className={on ? "on" : ""} 
+        onClick={() => props.click(props.id)} 
+        className={props.on ? "on" : ""} 
         style={{backgroundColor : props.color}} 
-        key={props.key}
+        // key={props.key}
         ></button>
     )
 }

@@ -5,14 +5,28 @@ import Pad from "./Pad.jsx";
 function PadsMain() {
   const [pads, setPads] = useState(padsData);
 
-  function toggle() {
-    console.log("toggling");
+  function toggle(id) {
+    setPads((prevpads) => {
+      
+      return prevpads.map((pad) => {
+        if (pad.id === id) {
+          return { ...pad, on: !pad.on };
+          
+        }
+        console.log(pad.id);
+        return pad;
+      })
+    }
+
+    )
   }
+
   const buttonElements = pads.map((pad) => (
     <Pad 
     click={toggle}
     on={pad.on}  //commented out to use derived state to make changes to the pads
     key={pad.id} 
+    id={pad.id}
     color={pad.color}  />
   ));
 
