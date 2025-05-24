@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-import IngredientForm from "./IngredientForm";
+import IngredientsForm from "./IngredientsForm";
+import ingredientList from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
 
 export default function Main() {
@@ -29,27 +30,13 @@ export default function Main() {
 
   return (
     <main>
-      <IngredientForm action={addIngredient} />
+      <IngredientsForm action={addIngredient} />
       {ingredientListItems.length > 0 && (
-        <section>
-          <h2>Ingredients on hand:</h2>
-          <ul className="ingredient-list" aria-live="polite">
-            {ingredientListItems}
-          </ul>
-          {ingredientListItems.length > 3 && (
-            <div className="get-recipe-container">
-              <div>
-                <h3>Ready for recipe?</h3>
-                <p>Generate a recipe from your list of ingredients.</p>
-              </div>
-              <button onClick={getRecipe}>Get Recipe</button>
-            </div>
-          )}
-        </section>
+        <ingredientList 
+        list={ingredientListItems}
+        getRecipe={getRecipe}/>
       )}
-      {recipeShown && (
-        <ClaudeRecipe/>
-      )}
+      {recipeShown && <ClaudeRecipe/>}
     </main>
   );
 }

@@ -1,4 +1,4 @@
-function IngredientForm(props) {
+function IngredientsForm(props) {
   return (
     <form action={props.action} className="add-ingredient-form">
       <input
@@ -12,4 +12,4 @@ function IngredientForm(props) {
   );
 }
 
-export default IngredientForm;
+export default IngredientsForm;
