@@ -6,11 +6,13 @@ function PadsMain() {
   const [pads, setPads] = useState(padsData);
 
   function toggle(id) {
-    setPads((prevpads) =>
-      prevpads.map((pad) => (pad.id === id ? { ...pad, on: !pad.on } : pad))
-    );
+    setPads(prevpads =>
+      prevpads.map(pad => 
+        (pad.id === id ? { ...pad, on: !pad.on } : pad)
+      )
+    )
   }
-
+  
   const buttonElements = pads.map((pad) => (
     <Pad
       click={toggle}
