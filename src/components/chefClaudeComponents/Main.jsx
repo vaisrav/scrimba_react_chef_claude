@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import IngredientsForm from "./IngredientsForm";
-import ingredientList from "./IngredientsList";
+import IngredientsList from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
 
 export default function Main() {
@@ -32,7 +32,7 @@ export default function Main() {
     <main>
       <IngredientsForm action={addIngredient} />
       {ingredientListItems.length > 0 && (
-        <ingredientList 
+        <IngredientsList 
         list={ingredientListItems}
         getRecipe={getRecipe}/>
       )}
