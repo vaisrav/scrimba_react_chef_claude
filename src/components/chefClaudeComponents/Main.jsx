@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
 
 import IngredientsForm from "./IngredientsForm";
 import IngredientsList from "./IngredientsList";
-// import ClaudeRecipe from "./ClaudeRecipe";
+import ClaudeRecipe from "./ClaudeRecipe";
 import { getRecipeFromMistral } from "../../hfApi";
 
 export default function Main() {
@@ -43,9 +42,7 @@ export default function Main() {
         getRecipe={getRecipe} />
       )}
       {recipeShown && (
-        <ReactMarkdown>
-          {recipeText || "No recipe found. Please try again."}
-        </ReactMarkdown>
+        <ClaudeRecipe recipe={recipeText} />
       )}
     </main>
   );
